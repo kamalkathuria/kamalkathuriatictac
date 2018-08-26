@@ -1,0 +1,27 @@
+* {
+    font-size: 50px;
+    text-align: center;
+}
+
+body{
+    background-color: #ffcc6d;
+    text-align: center;
+}
+
+table{
+    margin: 100px auto;
+    border-collapse: collapse;
+    border-style: hidden;
+}
+tr,td{
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.blocks td.X{
+    color: indianred;
+}
+.blocks td.O{
+    color: lightblue;
+}
