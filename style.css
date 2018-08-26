@@ -9,9 +9,10 @@ body{
 }
 
 table{
-    margin: 100px auto;
+    margin: auto;
     border-collapse: collapse;
     border-style: hidden;
+    margin-top: 35px;
 }
 tr,td{
     border: 2px solid black;
@@ -24,4 +25,13 @@ tr,td{
 }
 .blocks td.O{
     color: lightblue;
+}
+.size-select{
+    margin-top: 50px;
+}
+.size-select, option{
+    font-size: 50%;
+}
+.format-text{
+    font-size: 50%;
 }

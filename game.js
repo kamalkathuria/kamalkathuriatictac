@@ -1,9 +1,16 @@
-var col, curent_mark, moveCount = 0;
+var col, curent_mark, size, sizeOptions, moveCount = 0;
 
 //Base function
 function init(){
+size=3;
+    sizeOptions  = document.querySelector('.size-select');
+    //console.log(sizeOptions);
+    sizeOptions.addEventListener('change',function(e){
+       size=parseInt(e.target.value); 
+        console.log(size);
+        empty1(); 
+    });
     empty1();
-   
 }
 
 // function to clear the data
@@ -11,7 +18,8 @@ function init(){
 function empty1(){
     moveCount = 0;
     data = [];
-    size = 3;
+  
+   // console.log(value);
     fillData();
 }
 
@@ -20,6 +28,7 @@ function fillData(){
     
     col = document.getElementsByTagName('td');
     var board = document.querySelector('.blocks');
+    
      var table = '<table>';
         for (var i = 0; i < size; i++) {
             table += '<tr>';
