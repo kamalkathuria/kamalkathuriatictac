@@ -7,7 +7,7 @@ size=3;
     //console.log(sizeOptions);
     sizeOptions.addEventListener('change',function(e){
        size=parseInt(e.target.value); 
-        console.log(size);
+        //console.log(size);
         empty1(); 
     });
     empty1();
