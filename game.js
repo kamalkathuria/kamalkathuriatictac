@@ -1,8 +1,7 @@
-var col, curent_mark, size, sizeOptions, moveCount = 0;
-
+var col, curent_mark, size, sizeOptions, moveCount = 0, promptData;
 //Base function
 function init(){
-size=3;
+    size=3;
     sizeOptions  = document.querySelector('.size-select');
     //console.log(sizeOptions);
     sizeOptions.addEventListener('change',function(e){
@@ -11,6 +10,10 @@ size=3;
         empty1(); 
     });
     empty1();
+    if(promptData === 'No' || promptData === 'no' || promptData === 'NO' || promptData === 'nO'){
+        size = 0;
+        empty1();
+    }
 }
 
 // function to clear the data
@@ -62,12 +65,13 @@ function mark(event){
     moveCount++;
     if (checkWin(curent_mark)) {
         alert('Player ' + td.innerHTML + ' has won !');
-        var promptData = prompt('Do you want to Play More? Type Yes to play one more time or type No to exit');
+        promptData = prompt('Do you want to Play More? Type Yes to play one more time or type No to exit');
         if(promptData === 'Yes' || promptData === 'yes' || promptData ==='YES'){
             init();
         }
         else if (promptData === 'No' || promptData === 'no' || promptData === 'NO' || promptData === 'nO'){
                 alert('Thank you for spending time with us.!! Hope you come back soon.');
+                    init();
                 }
         
     } else if (moveCount === Math.pow(size, 2)) {
