@@ -61,8 +61,15 @@ function mark(event){
    // console.log(data);
     moveCount++;
     if (checkWin(curent_mark)) {
-        alert(td.innerHTML + ' has won !');
-        init();
+        alert('Player ' + td.innerHTML + ' has won !');
+        var promptData = prompt('Do you want to Play More? Type Yes to play one more time or type No to exit');
+        if(promptData === 'Yes' || promptData === 'yes' || promptData ==='YES'){
+            init();
+        }
+        else if (promptData === 'No' || promptData === 'no' || promptData === 'NO' || promptData === 'nO'){
+                alert('Thank you for spending time with us.!! Hope you come back soon.');
+                }
+        
     } else if (moveCount === Math.pow(size, 2)) {
              alert("It's a draw !");
              init();
@@ -74,6 +81,7 @@ var daigonal_left_to_right_count = 0,
     daigonal_right_to_left_count = 0,
     vertical_count = 0,
     horizontal_count = 0;
+    
     // 1. Check if all the columns are filled, then alert draw
     for(var i=0; i<size; i++){
         vertical_count = 0;
@@ -98,7 +106,7 @@ var daigonal_left_to_right_count = 0,
         }
     }
         if (daigonal_left_to_right_count == size || daigonal_right_to_left_count == size){
-            return true;
+                return true;
         }
     return false;
 }
